@@ -1,0 +1,2080 @@
+<?xml version="1.0" ?>
+<modifierdef>AltMovementWASD</modifierdef>
+
+<modifierdef>TakayamaF12</modifierdef>
+<modifierdef>TakayamaF11</modifierdef>
+<modifierdef>TakayamaF10</modifierdef>
+<modifierdef>TakayamaF9</modifierdef>
+<modifierdef>TakayamaF8</modifierdef>
+<modifierdef>TakayamaF7</modifierdef>
+<modifierdef>TakayamaF6</modifierdef>
+<modifierdef>TakayamaF5</modifierdef>
+<modifierdef>TakayamaF4</modifierdef>
+<modifierdef>TakayamaF3</modifierdef>
+<modifierdef>TakayamaF2</modifierdef>
+<modifierdef>TakayamaF1</modifierdef>
+
+<modifierdef>TakayamaSlash</modifierdef>
+<modifierdef>PseudoCommand</modifierdef>
+
+
+
+<replacementdef>
+    <replacementname>ALL_MODIFIERS</replacementname>
+    <replacementvalue>
+        MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </replacementvalue>
+</replacementdef>
+<replacementdef>
+    <replacementname>SHIFT+CTRL+OPT</replacementname>
+    <replacementvalue>
+        MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </replacementvalue>
+</replacementdef>
+
+
+
+<appdef>
+    <appname>REAPER</appname>
+    <equal>com.cockos.reaper</equal>
+</appdef>
+<appdef>
+    <appname>PHOTOSHOP</appname>
+    <equal>com.adobe.Photoshop</equal>
+</appdef>
+<appdef>
+    <appname>CHROME</appname>
+    <equal>com.google.Chrome</equal>
+</appdef>
+<appdef>
+    <appname>UNREAL</appname>
+    <equal>com.epicgames.UE4Editor</equal>
+</appdef>
+<item>
+    <name>Tabs</name>
+    <identifier>private.tabs</identifier>    
+    <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L,         
+        KeyCode::PAGEUP, ModifierFlag::CONTROL_L, ModifierFlag::SHIFT_L, 
+    </autogen> 
+</item>
+<item>
+    <name>btn 5 to control (anker)</name>
+    <identifier>private.btn_5_to_control_(anker)</identifier>
+    <device_only>DeviceVendor::ANKER, DeviceProduct::VERTICALMOUSE</device_only>    
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON5, 
+        KeyCode::CONTROL_L,
+    </autogen> 
+</item>
+<item>
+    <name>Alfred: Spacebar Holding</name>
+    <identifier>private.alfred_spacebar_holding</identifier>
+    <autogen> 
+        __HoldingKeyToKey__ KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+
+            @begin KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND @end
+            @begin KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L, @end
+    </autogen> 
+</item>
+
+<item>
+    <name>mod fn</name>
+    <identifier>private.mod_fn</identifier>
+    <autogen> 
+       __KeyToKey__ 
+       KeyCode::DELETE, ModifierFlag::EXTRA1 | ModifierFlag::NONE, 
+       KeyCode::FORWARD_DELETE 
+     </autogen> 
+    <autogen> 
+        __KeyToKey__ 
+        KeyCode::FN, KeyCode::UK_SECTION, 
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN, 
+        KeyCode::VK_LOCK_EXTRA1_FORCE_ON, 
+
+        Option::KEYTOKEY_AFTER_KEYUP, 
+        KeyCode::VK_LOCK_EXTRA1_FORCE_OFF, 
+    </autogen> 
+</item>
+
+<item>
+    <name>ReaperRemaps</name>  
+    <identifier>private.ReaperRemaps</identifier>
+    <only>REAPER</only>
+    <autogen>
+        __KeyToKey__ KeyCode::F13, KeyCode::VK_MODIFIER_AltMovementWASD, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::W, ModifierFlag::AltMovementWASD, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, 
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::S, ModifierFlag::AltMovementWASD, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+    </autogen> 
+    <autogen>
+        __KeyToKey__ KeyCode::W, ModifierFlag::AltMovementWASD, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::S, ModifierFlag::AltMovementWASD, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen> 
+    <autogen>
+	__KeyToKey__ KeyCode::W, ModifierFlag::AltMovementWASD,
+	KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen> 
+    <autogen>
+	__KeyToKey__ KeyCode::S, ModifierFlag::AltMovementWASD,
+	KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::A, ModifierFlag::AltMovementWASD,
+        KeyCode::A, {{ALL_MODIFIERS}},
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::D, ModifierFlag::AltMovementWASD,
+        KeyCode::D, {{ALL_MODIFIERS}},
+    </autogen>
+    <!--<autogen>
+        __DoublePressModifier__ KeyCode::D, ModifierFlag::AltMovementWASD,
+        KeyCode::BLACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>-->
+    <autogen>
+        __KeyToKey__ KeyCode::RETURN, ModifierFlag::AltMovementWASD,
+        KeyCode::R, {{ALL_MODIFIERS}}
+    </autogen>
+
+</item>
+<item> 
+    <name>PhotoshopRemaps</name>  
+    <identifier>private.PhotoshopRemaps</identifier> 
+    <only>PHOTOSHOP</only>
+    <autogen>
+        __KeyToKey__ KeyCode::F13, KeyCode::VK_MODIFIER_AltMovementWASD, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::W, ModifierFlag::AltMovementWASD, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, 
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::S, ModifierFlag::AltMovementWASD, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+    </autogen> 
+    <autogen>
+        __KeyToKey__ KeyCode::W, ModifierFlag::AltMovementWASD, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::S, ModifierFlag::AltMovementWASD, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen> 
+    <autogen>
+	__KeyToKey__ KeyCode::W, ModifierFlag::AltMovementWASD,
+	KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen> 
+    <autogen>
+	__KeyToKey__ KeyCode::S, ModifierFlag::AltMovementWASD,
+	KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::A, ModifierFlag::AltMovementWASD,
+        KeyCode::KEY_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::D, ModifierFlag::AltMovementWASD,
+        KeyCode::BACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+    <!--<autogen>
+        __DoublePressModifier__ KeyCode::D, ModifierFlag::AltMovementWASD,
+        KeyCode::BLACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>-->
+    <autogen>
+        __KeyToKey__ KeyCode::RETURN, ModifierFlag::AltMovementWASD,
+        KeyCode::R, {{ALL_MODIFIERS}}
+    </autogen>
+</item>
+<item>
+    <name>photoshop btn zoom (anker)</name>
+    <identifier>private.photoshop_btn_zoom_(anker)</identifier>
+    <only>PHOTOSHOP</only>
+    <device_only>DeviceVendor::ANKER, DeviceProduct::VERTICALMOUSE</device_only>
+    
+    <!-- Without these next two autogen, if BUTTON5 is pressed when only modifier  is COMMAND, an undesired shortcut can be triggered. -->       
+<!--     <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+
+        KeyCode::VK_NONE,
+    </autogen> 
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON5, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+
+        KeyCode::VK_NONE,
+    </autogen> 
+ -->
+    <!-- Scroll view right -->
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+
+        KeyCode::PAGEDOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>  
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+
+        KeyCode::VK_MOUSEKEY_SCROLL_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>  
+  
+    <!-- Scroll view left -->  
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON5, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+
+        KeyCode::PAGEUP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>  
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON5, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, 
+
+        KeyCode::VK_MOUSEKEY_SCROLL_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>  
+
+    <!-- Scroll view down / zoom out -->
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, 
+
+        KeyCode::PAGEDOWN,
+    </autogen> 
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+
+        KeyCode::VK_MOUSEKEY_SCROLL_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen>  
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON4, ModifierFlag::NONE,
+
+        KeyCode::VK_MOUSEKEY_SCROLL_DOWN, ModifierFlag::NONE,
+    </autogen>  
+
+    <!-- Scroll view up / zoom in -->  
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON5, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, 
+
+        KeyCode::PAGEUP,
+    </autogen> 
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON5, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+
+        KeyCode::VK_MOUSEKEY_SCROLL_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen>  
+    <autogen>
+        __PointingButtonToKey__
+        PointingButton::BUTTON5, ModifierFlag::NONE,
+
+        KeyCode::VK_MOUSEKEY_SCROLL_UP, ModifierFlag::NONE,
+    </autogen>      
+</item>
+<item>
+	<name>app switch F1</name>
+	<identifier>private.app_switch_F1</identifier>
+        <autogen>
+            __KeyToKey__ KeyCode::F1, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF1, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F1, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F1, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+        </autogen>
+        <autogen>
+        	__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::TakayamaF1,
+        	KeyCode::F1, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,<!-- {{ ALL_MODIFIERS }}, -->
+        </autogen>
+<!--         <autogen>
+        	__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::TakayamaF1, 
+        	KeyCode::F1, ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L
+        </autogen> -->
+
+</item>
+<item hidden="true">
+    <identifier vk_config="true">notsave.private_alfred_mode1</identifier>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+</item>
+<item hidden="true">
+    <identifier vk_config="true">notsave.private_alfred_mode2</identifier>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT, KeyCode::H</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN, KeyCode::J</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP, KeyCode::K</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT, KeyCode::L</autogen>
+</item>
+ <appdef>
+    <appname>ALFRED</appname>
+    <equal>com.runningwithcrayons.Alfred-2</equal>
+  </appdef>
+  <windownamedef>
+    <name>Quick Look</name>
+    <regex>^Quick Look$</regex>
+  </windownamedef>
+<!--   <item>
+    <name>alfred 2</name>
+    <identifier>private.alfred_2</identifier>
+    <only>ALFRED</only>
+   
+    <autogen>
+    	__KeyToKey__
+    	KeyCode::CURSOR_UP,
+    	KeyCode::CURSOR_UP,
+    </autogen>
+	<autogen>
+    	__KeyToKey__
+    	KeyCode::CURSOR_DOWN,
+    	KeyCode::CURSOR_DOWN,
+    </autogen>    
+  </item> -->
+  <item>
+    <name>alfred 2 w/ quick look</name>    
+    <identifier>private.alfred_2_w/_quick_look</identifier>
+	<only>ALFRED</only>
+    <block>
+    	<windowname_only>Quick Look</windowname_only>
+	    <autogen>
+	    	__KeyToKey__
+	        KeyCode::CURSOR_UP, ModifierFlag::NONE,
+
+	        Option::KEYTOKEY_BEFORE_KEYDOWN,
+	       	KeyCode::ESCAPE,
+	    </autogen>    	
+	    <autogen>
+	    	__KeyToKey__
+	        KeyCode::CURSOR_DOWN, ModifierFlag::NONE,
+
+	        Option::KEYTOKEY_BEFORE_KEYDOWN,
+	       	KeyCode::ESCAPE,
+	    </autogen>
+	</block>
+	<autogen>
+    	__KeyToKey__
+    	KeyCode::CURSOR_UP, ModifierFlag::NONE,
+    	KeyCode::CURSOR_UP,
+    </autogen>  		
+	<autogen>
+    	__KeyToKey__
+    	KeyCode::CURSOR_DOWN, ModifierFlag::NONE,
+    	KeyCode::CURSOR_DOWN,
+    </autogen>    
+</item>  
+<item> 
+    <name>M (bépo) to Shift_R</name> 
+    <appendix>(+ When you type M only, send M) + [KeyRepeat]</appendix> 
+    <identifier>net.petitepomme.alan.space_m_shift</identifier> 
+    <autogen> 
+    	__KeyOverlaidModifierWithRepeat__ 
+    	KeyCode::QUOTE, 
+    	KeyCode::SHIFT_R, ModifierFlag::M, 
+    	KeyCode::QUOTE 
+	</autogen> 
+  	<block> 
+    	<!-- <modifier_only>ModifierFlag::M</modifier_only>  -->
+    	<windowname_only>Quick Look</windowname_only>
+	    <autogen>__KeyToKey__ KeyCode::SHIFT_L</autogen> 
+    </block> 
+</item> 
+  <item>
+    <name>Return to Control_L</name>
+    <appendix>(+ When you type Return only, send Return)</appendix>
+    <identifier>private.return2controlL_return</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::RETURN,
+      KeyCode::VK_LAZY_CONTROL_L,
+      KeyCode::RETURN,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Control_L to Control_L</name>
+    <appendix>(+ When you type Control_L only, send Escape)</appendix>
+    <identifier>private.controlL2controlL_escape</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::CONTROL_L,
+      KeyCode::VK_LAZY_CONTROL_L,
+      KeyCode::ESCAPE
+    </autogen>
+  </item>
+
+<!-- Definitions for devices and applications -->
+    <appdef>
+        <appname>REAPER</appname>
+        <equal>com.cockos.reaper</equal>
+    </appdef>
+    <devicevendordef>
+        <vendorname>ANKER</vendorname>
+        <vendorid>0x062a</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+        <productname>VERTICALMOUSE</productname>
+        <productid>0x4102</productid>
+    </deviceproductdef>  
+<!-- end -->
+
+<item>
+    <name>Reaper Scroll Util</name>
+    <identifier>private.reaper_scroll_util</identifier>
+    <only>REAPER</only>
+    <autogen>__ScrollWheelToKey__ ScrollWheel::UP, ModifierFlag::CONTROL_L,  ModifierFlag::SHIFT_L, KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L, ModifierFlag::SHIFT_L,</autogen>
+    <autogen>__ScrollWheelToKey__ ScrollWheel::DOWN, ModifierFlag::CONTROL_L, ModifierFlag::SHIFT_L, KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L, ModifierFlag::SHIFT_L,</autogen>   
+    <autogen>__ScrollWheelToKey__ ScrollWheel::UP, ModifierFlag::CONTROL_L, KeyCode::CURSOR_UP, ModifierFlag::NONE,</autogen>
+    <autogen>__ScrollWheelToKey__ ScrollWheel::DOWN, ModifierFlag::CONTROL_L,KeyCode::CURSOR_DOWN, ModifierFlag::NONE,</autogen> 
+</item>
+<item>
+    <name>Reaper: edge actions capslock</name>
+    <identifier>private.edge_actions_capslock</identifier>
+    <autogen> 
+        __DoublePressModifier__ KeyCode::F13, KeyCode::F13, KeyCode::F13, ModifierFlag::COMMAND_L,
+    </autogen> 
+</item>
+
+<item>
+    <name>pseudomod</name>
+    <identifier>private.pseudomod</identifier>
+    <autogen> 
+        __KeyToKey__ 
+        KeyCode::COMMAND_R, ModifierFlag::TakayamaF5, 
+        KeyCode::VK_MODIFIER_PseudoCommand, ModifierFlag::TakayamaF5, 
+    </autogen> 
+</item>
+
+<item>
+    <name>Reaper: toggle jump</name>
+    <identifier>private.Reaper:_toggle_jump</identifier>
+    <only>REAPER</only>
+    <autogen>
+        __KeyToKey__ 
+        KeyCode::BACKSLASH, KeyCode::VK_MODIFIER_TakayamaSlash,
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::BACKSLASH,
+        Option::KEYTOKEY_AFTER_KEYUP, KeyCode::BACKSLASH, ModifierFlag::SHIFT_R,
+    </autogen>  
+    <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaSlash,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L
+    </autogen>
+    <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaSlash,
+        KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L
+    </autogen>    
+</item>
+
+<item>
+    <name>Reaper: toggle grid</name>
+    <identifier>private.Reaper:_toggle_grid</identifier>
+    <only>REAPER</only>
+    <autogen>
+        __KeyToKey__ 
+        KeyCode::G, ModifierFlag::TakayamaF6, 
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::G, ModifierFlag::SHIFT_L, 
+        Option::KEYTOKEY_AFTER_KEYUP, KeyCode::G, ModifierFlag::SHIFT_L,
+    </autogen>
+</item>
+<item>
+    <name>Reaper: record --> R and R, R</name>
+    <identifier>private.Reaper:_record_-->_R_and_R,_R</identifier>
+    <only>REAPER</only>
+    <autogen>
+        __KeyToKey__
+        KeyCode::R, ModifierFlag::CONTROL_L,
+        
+        Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::R, 
+        Option::KEYTOKEY_AFTER_KEYUP, KeyCode::SPACE,
+    </autogen>
+</item>
+<item>
+    <name>escape stuck fkey gate</name>
+    <identifier>private.escape_stuck_fkey_gate</identifier>
+        <autogen>__DoublePressModifier__ KeyCode::ESCAPE, KeyCode::ESCAPE,  KeyCode::ESCAPE, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L, ModifierFlag::CONTROL_L,
+        ModifierFlag::OPTION_L,
+        </autogen>
+</item>
+<modifierdef>BUTTON4</modifierdef>
+
+<item>
+    <name>Button 4 for Application Switching (Alt-Tab)</name>
+    <identifier>private.button4_for_app_switch</identifier>
+    <autogen>
+        __KeyOverlaidModifier__ PointingButton::BUTTON4, ModifierFlag::NONE, @begin KeyCode::COMMAND_L, ModifierFlag::BUTTON4, @end @begin KeyCode::TAB, ModifierFlag::COMMAND_L,
+        <!-- a hack to release the command key -->
+        KeyCode::VK_MODIFIER_BUTTON4, @end
+    </autogen>
+    <autogen>
+        __KeyToKey__ PointingButton::LEFT, ModifierFlag::BUTTON4, KeyCode::TAB,
+    </autogen>
+    <autogen>
+        __KeyToKey__ PointingButton::RIGHT, ModifierFlag::BUTTON4, KeyCode::TAB, ModifierFlag::SHIFT_L,
+    </autogen>
+
+    <!-- example: button4+button5 to warp mouse cursor. -->
+    <autogen>
+        __KeyToKey__ PointingButton::BUTTON5, ModifierFlag::BUTTON4, KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_front_window_center,
+    </autogen>
+</item>
+
+<item>
+    <name>Use space to activate Vi Mode</name>
+    <identifier>private.vi_mode</identifier>
+    <autogen>
+        __KeyOverlaidModifier__ KeyCode::SPACE, KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_vi_mode1, KeyCode::SPACE,
+    </autogen>
+    <autogen>
+        __KeyOverlaidModifier__ KeyCode::C, KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_vi_mode2, KeyCode::C,
+    </autogen>
+
+    <block>
+        <config_only>notsave.private_vi_mode1</config_only>
+        <autogen>
+            __BlockUntilKeyUp__ KeyCode::SPACE
+        </autogen>
+    </block>
+
+    <block>
+        <config_only>notsave.private_vi_mode2</config_only>
+        <autogen>
+            __BlockUntilKeyUp__ KeyCode::C
+        </autogen>
+    </block>
+</item>
+
+<item hidden="true">
+    <identifier vk_config="true">notsave.private_vi_mode1</identifier>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+</item>
+<item hidden="true">
+    <identifier vk_config="true">notsave.private_vi_mode2</identifier>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT, KeyCode::H</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN, KeyCode::J</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP, KeyCode::K</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT, KeyCode::L</autogen>
+</item>
+<item>
+    <name>lock simul</name>
+    <identifier>private.lock_simul</identifier>
+    <block>
+        <modifierlocked_only>ModifierFlag::SHIFT_L</modifierlocked_only>
+        <autogen>
+            __SimultaneousKeyPresses__ __{ KeyCode::E, KeyCode::W, }__ KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF, KeyCode::VK_STICKY_SHIFT_L_FORCE_OFF,
+        </autogen>
+    </block>
+
+    <block>
+        <modifierstuck_only>ModifierFlag::SHIFT_L</modifierstuck_only>
+        <autogen>
+            __SimultaneousKeyPresses__ __{ KeyCode::E, KeyCode::W, }__ KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON, KeyCode::VK_LOCK_SHIFT_L_FORCE_ON, KeyCode::VK_STICKY_SHIFT_L_FORCE_OFF,
+        </autogen>
+    </block>
+
+    <block>
+        <autogen>
+            __SimultaneousKeyPresses__ __{ KeyCode::E, KeyCode::W, }__ KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON, KeyCode::VK_STICKY_SHIFT_L_FORCE_ON,
+        </autogen>
+    </block>
+
+</item>
+
+<item>
+    <name>tru ergo</name>
+    <identifier>private.tru_ergo</identifier>
+    <autogen>
+        __KeyOverlaidModifier__ KeyCode::SHIFT_L, KeyCode::CONTROL_L, KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON, KeyCode::VK_STICKY_CONTROL_L,
+    </autogen>
+    <autogen>
+        __KeyOverlaidModifier__ KeyCode::SHIFT_R, KeyCode::CONTROL_L, KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON, KeyCode::VK_STICKY_CONTROL_L,
+    </autogen>
+    <autogen>
+        __KeyOverlaidModifier__ KeyCode::CONTROL_L, KeyCode::SHIFT_L, KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON, KeyCode::VK_STICKY_SHIFT_L,
+    </autogen>
+</item>
+<item>
+    <name>sticky mod interrupt</name>
+    <identifier>private.name_mod_interrupt</identifier>
+    <autogen>
+        __KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_STICKY_EXTRA1_FORCE_ON, KeyCode::SHIFT_R,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::COMMAND_R, KeyCode::VK_STICKY_EXTRA1_FORCE_OFF, KeyCode::VK_STICKY_EXTRA2_FORCE_ON, KeyCode::COMMAND_R,
+    </autogen>
+
+    <autogen>
+        __KeyToKey__
+        <!-- from -->
+        KeyCode::SPACE, ModifierFlag::SHIFT_R | ModifierFlag::EXTRA1,
+        <!-- to -->
+        KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE,
+    </autogen>
+
+    <autogen>
+        __KeyToKey__
+        <!-- from -->
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::EXTRA2,
+        <!-- to -->
+        KeyCode::KEY_2, ModifierFlag::SHIFT_R, KeyCode::SPACE,
+    </autogen>
+</item>
+<modifierdef>MY_HYPER</modifierdef>
+<modifierdef>MY_SUPER</modifierdef>
+
+<item>
+    <name>My hyper and super key</name>
+    <appendix>* Change the right shift key to my hyper key.</appendix>
+    <appendix>* Change the right option key to my super key.</appendix>
+    <appendix></appendix>
+    <appendix>* Change hyper+a,s to 1,2.</appendix>
+    <appendix>* Change super+a,s to brightness controls.</appendix>
+    <identifier>private.hyper_super</identifier>
+
+    <!-- Change the right shift key to my hyper key. -->
+    <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_MODIFIER_MY_HYPER</autogen>
+    <!-- Change the right option key to my super key. -->
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::VK_MODIFIER_MY_SUPER</autogen>
+
+    <!-- hyper key settings -->
+    <autogen>
+        __KeyToKey__ KeyCode::A, ModifierFlag::MY_HYPER, KeyCode::KEY_1,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::S, ModifierFlag::MY_HYPER, KeyCode::KEY_2,
+    </autogen>
+
+    <!-- super key settings -->
+    <autogen>
+        __KeyToKey__ KeyCode::A, ModifierFlag::MY_SUPER, ConsumerKeyCode::BRIGHTNESS_DOWN,
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::S, ModifierFlag::MY_SUPER, ConsumerKeyCode::BRIGHTNESS_UP,
+    </autogen>
+
+</item>
+
+<item>
+    <!-- https://groups.google.com/forum/#!searchin/osx-karabiner/holding/osx-karabiner/6qNqb5w4pdk/zhrWvL_kOmcJ -->
+    <name>press hold cmd right</name>
+    <identifier>private.press_and_hold_command_right</identifier>
+    <autogen>
+        --HoldingKeyToKey-- KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::VK_NONE, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+</item>
+<item>
+    <name>space tap</name>
+    <identifier>private.space_tap</identifier>
+    <autogen>
+        __HoldingKeyToKey__ KeyCode::SPACE, KeyCode::SPACE, KeyCode::VK_NONE, KeyCode::VK_MOUSEKEY_BUTTON_RIGHT,
+    </autogen>
+</item>
+<!-- <item>
+    <name>double 2</name>
+    <identifier>private.double_2</identifier>
+    <autogen>--DoublePressModifier--
+      KeyCode::KEY_2,
+      KeyCode::KEY_2,
+
+      KeyCode::KEY_2, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>double 1</name>
+    <identifier>private.double_1</identifier>
+    <autogen>--DoublePressModifier--
+      KeyCode::KEY_1,
+      KeyCode::KEY_1,
+
+      KeyCode::KEY_1, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item> -->
+  <item>
+    <name>Reaper: Caplock/BTN4 Utility</name>
+
+    <!-- <device_only>DeviceVendor::ANKER,DeviceProduct::VERTICALMOUSE</device_only> -->
+    <item>
+        <name>caps</name>
+        <identifier>private.caps</identifier>
+        <only>REAPER</only>
+        <autogen>
+            __HoldingKeyToKey__ KeyCode::F13, ModifierFlag::NONE,
+
+            @begin KeyCode::VK_MOUSEKEY_BUTTON_MIDDLE, @end <!-- Needs a dummy? -->
+            @begin KeyCode::VK_MOUSEKEY_BUTTON_MIDDLE, @end
+        </autogen> 
+    </item>        
+    <item>
+        <name>btn3 (mouse)</name>
+        <identifier>private.btn3</identifier>
+        <only>REAPER</only>
+        <device_only>DeviceVendor::ANKER, DeviceProduct::VERTICALMOUSE</device_only>
+         <autogen>
+            __PointingButtonToKey__
+            PointingButton::BUTTON5, ModifierFlag::NONE,
+
+            KeyCode::VK_MOUSEKEY_BUTTON_MIDDLE,
+        </autogen>        
+    </item>           
+    <item>
+        <name>caps+shift</name>
+        <identifier>private.caps_+_shift</identifier>
+        <only>REAPER</only>
+        <autogen>
+            __HoldingKeyToKey__ KeyCode::F13, ModifierFlag::SHIFT_L,
+
+            @begin KeyCode::VK_MOUSEKEY_BUTTON_MIDDLE, @end
+            @begin KeyCode::VK_MOUSEKEY_BUTTON_RIGHT, ModifierFlag::SHIFT_L, @end
+        </autogen>  
+    </item> 
+    <item>
+        <name>btn3+shift (mouse)</name>
+        <identifier>private.btn3_+_shift</identifier>
+        <only>REAPER</only>
+        <device_only>DeviceVendor::ANKER, DeviceProduct::VERTICALMOUSE</device_only>
+         <autogen>
+            __PointingButtonToKey__
+            PointingButton::BUTTON5, ModifierFlag::SHIFT_L,
+
+            KeyCode::VK_MOUSEKEY_BUTTON_RIGHT, ModifierFlag::SHIFT_L,
+        </autogen>
+    </item>     
+    <item>
+        <name>caps+cmd</name>
+        <identifier>private.caps_+_cmd</identifier>
+        <only>REAPER</only>
+        <autogen>
+            __HoldingKeyToKey__ KeyCode::F13, ModifierFlag::COMMAND_L,
+
+            @begin KeyCode::X, @end
+            @begin KeyCode::VK_MOUSEKEY_BUTTON_RIGHT, ModifierFlag::COMMAND_L, @end
+        </autogen>  
+    </item> 
+    <item>
+        <name>btn3+cmd (mouse)</name>
+        <identifier>private.btn3_+_cmd</identifier>
+        <only>REAPER</only>
+        <device_only>DeviceVendor::ANKER, DeviceProduct::VERTICALMOUSE</device_only>
+         <autogen>
+            __PointingButtonToKey__
+            PointingButton::BUTTON5, ModifierFlag::COMMAND_L,
+
+            KeyCode::VK_MOUSEKEY_BUTTON_RIGHT, ModifierFlag::COMMAND_L,
+        </autogen>    
+    </item>
+</item>
+<item>
+    <name>Reaper: BTN_RT Drag Restriction</name>
+    <identifier>private.rt_drag_restriction</identifier>
+    <only>REAPER</only>
+    <!-- In Reaper... Arrange View: rt drag (default) = none -->
+    <autogen> 
+        <!-- Saftey/restriction purposes. Don't want multiple paths to achieving the same thing. -->
+        __PointingButtonToKey__
+        PointingButton::RIGHT, ModifierFlag::NONE,
+
+        KeyCode::VK_MOUSEKEY_BUTTON_RIGHT,
+    </autogen>  
+    <autogen> 
+        <!-- Saftey/restriction purposes. Don't want multiple paths to achieving the same thing. -->
+        __PointingButtonToKey__
+        PointingButton::RIGHT, ModifierFlag::SHIFT_L,
+
+        KeyCode::VK_MOUSEKEY_BUTTON_RIGHT,
+    </autogen>         
+    <autogen> 
+        <!-- Saftey/restriction purposes. Don't want multiple paths to achieving the same thing. -->
+        __PointingButtonToKey__
+        PointingButton::RIGHT, ModifierFlag::COMMAND_L,
+
+        KeyCode::VK_MOUSEKEY_BUTTON_RIGHT,
+    </autogen>
+</item>  
+<!-- <item>
+    <name>Scroll Modifiers</name>
+    <item>
+        <name>-- with [SHIFT]</name>
+        <identifier>scroll_modifiers.scroll_with_shift</identifier>
+        <autogen>__ScrollWheelToKey__ ScrollWheel::UP, ModifierFlag::SHIFT_L, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L,
+        </autogen>
+        <autogen>__ScrollWheelToKey__ ScrollWheel::DOWN, ModifierFlag::SHIFT_L, KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L,</autogen>
+    </item>    
+    <item>
+        <name>-- with [CMD]</name>
+        <identifier>scroll_modifiers.scroll_with_cmd</identifier>
+        <autogen>__ScrollWheelToKey__ ScrollWheel::UP, ModifierFlag::COMMAND_L, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L, 
+        </autogen>
+        <autogen>__ScrollWheelToKey__ ScrollWheel::DOWN, ModifierFlag::COMMAND_L, KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L,</autogen>
+    </item>    
+</item> -->
+<item>
+    <name>middle click drag</name>
+    <identifier>private.middle_click_drag</identifier>
+    <only>REAPER</only>
+    <autogen>
+        __KeyToKey__ KeyCode::F13, KeyCode::M, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_MIDDLE, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_MIDDLE,
+        <!-- KeyCode::F13, -->
+        <!--        KeyCode::M,
+        ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, -->
+
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::F13, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE, KeyCode::M, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_LOCK_COMMAND_L, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_MIDDLE, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_MIDDLE, KeyCode::VK_LOCK_COMMAND_L,
+
+        <!-- KeyCode::P, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L -->
+        <!-- KeyCode::F13, -->
+        <!--        KeyCode::M,
+        ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, -->
+
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::BACKSLASH,
+        <!-- ModifierFlag::COMMAND_L, -->
+
+        <!-- KeyCode::M, -->
+        <!-- KeyCode::VK_LOCK_COMMAND_L, -->
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+
+        <!-- KeyCode::VK_LOCK_COMMAND_L,      -->
+        <!-- KeyCode::F13, -->
+        <!--        KeyCode::M,
+        ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, -->
+
+    </autogen>
+    <autogen>
+        __KeyToKey__ KeyCode::BACKSLASH, ModifierFlag::COMMAND_R,
+
+        <!-- KeyCode::M, -->
+        KeyCode::VK_LOCK_COMMAND_L, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT, KeyCode::VK_LOCK_COMMAND_L,
+        <!-- KeyCode::F13, -->
+        <!--        KeyCode::M,
+        ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, -->
+
+    </autogen>
+
+    <autogen>
+        <!-- not working -->
+        __KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::M, KeyCode::BRACKET_RIGHT, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_MIDDLE, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_MIDDLE,
+
+        <!-- KeyCode::M, ModifierFlag::COMMAND_L -->
+    </autogen>
+
+</item>
+
+<item>
+    <name>right click drag</name>
+    <identifier>private.right_click_drag</identifier>
+    <autogen>
+        __KeyToKey__ KeyCode::F13, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_RIGHT,
+        <!--  KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::M, KeyCode::VK_PARTIAL_KEYUP, KeyCode::M, KeyRepeat::RawValue::50, -->
+        Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_RIGHT,
+        <!-- KeyCode::M,
+        ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, -->
+
+    </autogen>
+</item>
+<item>
+    <!-- This fix works for Karabiner and Keyboard Maestro interaction.-->
+    <name>Hold [RIGHT] to repeat [RIGHT]</name>
+    <identifier>private.repeat_arrow_right</identifier>
+
+    <autogen>
+        __KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, KeyCode::VK_WAIT_10MS, KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT,
+
+        <!-- 50 millisecond -->
+        KeyRepeat::RawValue::50,
+    </autogen>
+
+</item>
+
+<item>
+    <name>Change shift-space to f19</name>
+    <identifier>private.shift_space_to_f19</identifier>
+    <autogen>
+        __KeyToKey__ KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE, KeyCode::SPACE, ModifierFlag::SHIFT_L,
+    </autogen>
+</item>
+
+<item>
+    <name>Change shift-space to f19 (no repeat)</name>
+    <identifier>private.shift_space_to_f19_norepeat</identifier>
+
+    <autogen>
+        __KeyToKey__ KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE, KeyCode::F19, Option::NOREPEAT,
+    </autogen>
+</item>
+<item>
+    <name>pve</name>
+    <identifier>private.pvr</identifier>
+    __KeyOverlaidModifierWithRepeat__ KeyCode::SPACE, KeyCode::SPACE,
+</item>
+<item>
+    <name>Home x2 to move to first non-space character on line</name>
+    <appendix>(+ Home to beginning of line)</appendix>
+    <identifier>private.home_x2_hack</identifier>
+    <autogen>--DoublePressModifier-- KeyCode::A, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
+    </autogen>
+</item>
+
+
+
+
+<item>
+    <name>shift + capslock to double click</name>
+    <identifier>private.shift_+_capslock_to_double_click</identifier>
+    <autogen>
+        __SimultaneousKeyPresses__ KeyCode::SHIFT_L, KeyCode::F13, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::VK_MOUSEKEY_BUTTON_LEFT, KeyCode::VK_MOUSEKEY_BUTTON_LEFT, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_PARTIAL_KEYUP,
+    </autogen>
+</item>
+
+<root>
+    <replacementdef>
+        <replacementname>PRIVATE_CLEAR_FLAGS</replacementname>
+        <replacementvalue>
+            KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag1, KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag2, KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag3, KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag4, KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag5,
+        </replacementvalue>
+    </replacementdef>
+
+    <item hidden="true">
+        <identifier vk_config="true">notsave.private_flag1</identifier>
+    </item>
+    <item hidden="true">
+        <identifier vk_config="true">notsave.private_flag2</identifier>
+    </item>
+    <item hidden="true">
+        <identifier vk_config="true">notsave.private_flag3</identifier>
+    </item>
+    <item hidden="true">
+        <identifier vk_config="true">notsave.private_flag4</identifier>
+    </item>
+    <item hidden="true">
+        <identifier vk_config="true">notsave.private_flag5</identifier>
+    </item>
+
+    <item>
+        <name>Tab to symbol (!@#$%)</name>
+        <identifier>private.cycle_tab</identifier>
+        <block>
+            <config_only>notsave.private_flag1</config_only>
+            <autogen>
+                __KeyToKey__ KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::KEY_2, ModifierFlag::SHIFT_L, {{ PRIVATE_CLEAR_FLAGS }}, KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag2, KeyCode::VK_STICKY_EXTRA1,
+            </autogen>
+        </block>
+        <block>
+            <config_only>notsave.private_flag2</config_only>
+            <autogen>
+                __KeyToKey__ KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L, {{ PRIVATE_CLEAR_FLAGS }}, KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag3, KeyCode::VK_STICKY_EXTRA1,
+            </autogen>
+        </block>
+        <block>
+            <config_only>notsave.private_flag3</config_only>
+            <autogen>
+                __KeyToKey__ KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::KEY_4, ModifierFlag::SHIFT_L, {{ PRIVATE_CLEAR_FLAGS }}, KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag4, KeyCode::VK_STICKY_EXTRA1,
+            </autogen>
+        </block>
+        <block>
+            <config_only>notsave.private_flag4</config_only>
+            <autogen>
+                __KeyToKey__ KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_L, {{ PRIVATE_CLEAR_FLAGS }}, KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag5, KeyCode::VK_STICKY_EXTRA1,
+            </autogen>
+        </block>
+        <block>
+            <config_only>notsave.private_flag5</config_only>
+            <autogen>
+                __KeyToKey__ KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::KEY_1, ModifierFlag::SHIFT_L, {{ PRIVATE_CLEAR_FLAGS }}, KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag1, KeyCode::VK_STICKY_EXTRA1,
+            </autogen>
+        </block>
+        <autogen>
+            __KeyToKey__ KeyCode::TAB, KeyCode::KEY_1, ModifierFlag::SHIFT_L, {{ PRIVATE_CLEAR_FLAGS }}, KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag1, KeyCode::VK_STICKY_EXTRA1,
+        </autogen>
+    </item>
+
+
+    <!--     <item>
+        <name>rt click</name>
+        <identifier>private.rt_click</identifier>
+
+        <autogen>
+            __PointingButtonToKey__ PointingButton::RIGHT, KeyCode::A
+        </autogen>
+    </item> -->
+
+    <item>
+
+        <name>unknown</name>
+        <identifier>private.unknown</identifier>
+        <autogen>
+            __KeyToKey__ KeyCode::F9, KeyCode::VK_MODIFIER_EXTRA1,
+        </autogen>
+
+        <autogen>
+            __KeyToKey__ KeyCode::D, ModifierFlag::EXTRA1, KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+        </autogen>
+        <autogen>
+            __KeyToKey__ KeyCode::F, ModifierFlag::EXTRA1, KeyCode::KEY_2, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+        </autogen>
+    </item>
+
+    <item>
+        <name>step lock drag</name>
+        <identifier>private.step_lock_drag</identifier>
+        <block>
+            <autogen>
+                __SimultaneousKeyPresses__ KeyCode::F13, KeyCode::D, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT
+            </autogen>
+        </block>
+        <!--         <block>
+            <autogen>
+                __KeyToKey__ KeyCode::F13, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT
+            </autogen>
+        </block> -->
+    </item>
+
+    <item>
+        <name>simul fn and f13 to lock</name>
+        <identifier>private.simul_fn_and_f13_to_lock</identifier>
+        <autogen>
+            __SimultaneousKeyPresses__ KeyCode::FN, KeyCode::F13, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_PARTIAL_KEYUP,
+        </autogen>
+    </item>
+
+    <item>
+        <name>fn and f13 to lock</name>
+        <identifier>private.fn_and_f13_to_lock</identifier>
+        <autogen>
+            __KeyToKey__ KeyCode::F13, ModifierFlag::FN, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+        </autogen>
+
+        <!--         <autogen>
+            __KeyToKey__ KeyCode::F13, ModifierFlag::FN, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_PARTIAL_KEYUP,
+        </autogen> -->
+    </item>
+
+    <item>
+        <name>Change Mouse Button5 to Click Lock</name>
+        <identifier>private.button5_to_click_lock</identifier>
+
+        <autogen>
+            __KeyToKey__ KeyCode::F13, KeyCode::VK_MOUSEKEY_BUTTON_LEFT, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_PARTIAL_KEYDOWN, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_PARTIAL_KEYUP,
+        </autogen>
+        <autogen>
+            __SimultaneousKeyPresses__ KeyCode::SHIFT_L, KeyCode::F13, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::VK_MOUSEKEY_BUTTON_LEFT, KeyCode::VK_MOUSEKEY_BUTTON_LEFT, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_PARTIAL_KEYUP,
+        </autogen>
+        <autogen>
+            __SimultaneousKeyPresses__ KeyCode::COMMAND_L, KeyCode::F13, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::VK_MOUSEKEY_BUTTON_RIGHT, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_PARTIAL_KEYUP,
+        </autogen>
+    </item>
+
+    <item>
+
+        <name>keyboard mouse keys</name>
+        <identifier>private.keyboard_mouse_keys</identifier>
+        <autogen>__KeyToKey__ KeyCode::FN, KeyCode::VK_MOUSEKEY_BUTTON_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::VK_MOUSEKEY_BUTTON_RIGHT</autogen>
+    </item>
+    <item>
+        <name>Maya Hotkeys</name>
+        <item>
+            <name>Maya Marking Menus on Crack</name>
+            <identifier>private.maya_marking_menu_hover</identifier>
+            <appendix>Press M for Marking Menu</appendix>
+
+
+            <autogen>__KeyToKey__ KeyCode::M, KeyCode::VK_MOUSEKEY_BUTTON_LEFT, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::M, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_PARTIAL_KEYUP, KeyCode::M,
+            </autogen>
+        </item>
+
+    </item>
+
+    <item>
+        <name>Reaper64 swap cmd and shift</name>
+        <identifier>private.app_reaper64_swap_cmd_and_shift</identifier>
+        <only>REAPER</only>
+        <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::SHIFT_L</autogen>
+        <autogen>__KeyToKey__ KeyCode::SHIFT_L, KeyCode::COMMAND_L</autogen>
+        <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::SHIFT_R</autogen>
+        <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::COMMAND_R</autogen>
+    </item>
+    <item>
+        <name>Lock left command key when you press only left command key.</name>
+        <identifier>private.command_l_to_command_l_lock_kom</identifier>
+        <autogen>
+            __KeyOverlaidModifier__ KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::VK_LOCK_COMMAND_L,
+        </autogen>
+    </item>
+
+    <item>
+        <name>Fingers</name>
+        <identifier>notsave.private_fingers</identifier>
+        <autogen>__ShowStatusMessage__ Fingers</autogen>
+        <autogen>
+            __PointingButtonToKey__ PointingButton::LEFT, KeyCode::VK_CONFIG_TOGGLE_notsave_private_button_lock_mode
+        </autogen>
+    </item>
+
+    <item>
+        <name>Button Lock Mode</name>
+        <identifier vk_config="true">notsave.private_button_lock_mode</identifier>
+        <autogen>__ShowStatusMessage__ Lock Mode</autogen>
+        <block>
+            <config_only>notsave.private_fingers</config_only>
+            <autogen>
+                __PointingButtonToKey__ PointingButton::LEFT, KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_button_lock_mode
+            </autogen>
+        </block>
+        <autogen>
+            __PointingButtonToKey__ PointingButton::LEFT, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT
+        </autogen>
+    </item>
+
+    <item>
+        <name>gorkus</name>
+        <identifier>gorkus</identifier>
+        <autogen>
+            __SimultaneousKeyPresses__ KeyCode::J, KeyCode::K, Option::SIMULTANEOUSKEYPRESSES_RAW,
+        </autogen>
+        <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+
+        <autogen>
+            __KeyOverlaidModifier__ KeyCode::F19, KeyCode::VK_MODIFIER_EXTRA1, KeyCode::VK_LOCK_EXTRA1,
+        </autogen>
+    </item>
+
+    <replacementdef>
+        <replacementname>FIXED_F3</replacementname>
+        <replacementvalue>ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L</replacementvalue>
+    </replacementdef>
+
+    <item>
+        <name>f-key gate</name>
+        <identifier vk_config="true">fkey.gate</identifier>
+        <autogen>--ShowStatusMessage-- F-KEY GATE</autogen>
+    </item>
+
+    <item>
+        <name>f-key gate11</name>
+        <identifier vk_config="true">fkey.gate11</identifier>
+        <autogen>--ShowStatusMessage-- F-KEY GATE 11</autogen>
+    </item>
+        <item>
+        <name>f-key gate12</name>
+        <identifier vk_config="true">fkey.gate12</identifier>
+        <autogen>--ShowStatusMessage-- F-KEY GATE 12</autogen>
+    </item>
+    <item>
+        <!-- https://groups.google.com/forum/#!searchin/osx-karabiner/sticky/osx-karabiner/AcxSHgJPYf4/biiRj2Drv8cJ -->
+        <name>sticky mod interrupt takayama</name>
+        <identifier>private.name_mod_interrupt_takayama</identifier>
+        <autogen>
+            __KeyToKey__ KeyCode::F9, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_OFF, KeyCode::VK_STICKY_EXTRA1_FORCE_ON, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_STICKY_EXTRA1_FORCE_OFF,
+        </autogen>
+        <autogen>
+            __KeyToKey__ KeyCode::F10, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_STICKY_EXTRA2_FORCE_ON, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_STICKY_EXTRA2_FORCE_OFF,
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            <!-- from -->
+            KeyCode::SPACE, ModifierFlag::EXTRA1,
+            <!-- to -->
+            KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE,
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            <!-- from -->
+            KeyCode::SPACE, ModifierFlag::EXTRA2,
+            <!-- to -->
+            KeyCode::KEY_2, ModifierFlag::SHIFT_R, KeyCode::SPACE,
+        </autogen>
+    </item>
+    <item>
+    <name>special takayama</name>
+        <item>
+            <name>special takayama f12</name>
+            <identifier>private.special_takayama_f12</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F12, KeyCode::VK_MODIFIER_TakayamaF12, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F12, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate12, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F12, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate12,
+            </autogen>
+        </item>
+        <item>
+            <name>special takayama f11</name>
+            <identifier>private.special_takayama_f11</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F11, KeyCode::VK_MODIFIER_TakayamaF11, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F11, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate11, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F11, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate11,
+            </autogen>
+        </item>    
+    </item>    
+    <item>
+        <name>Reaper: Tayakama F1-F12</name>
+        <item>
+            <name>TakayamaF12</name>
+            <identifier>TakayamaF12</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F12, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF12, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F12, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F12, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF12, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF12, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF12, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF12, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF12, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+
+            <!-- Z = OPTx+SHIFT+X -->
+            <autogen>__KeyToKey__ KeyCode::Z, ModifierFlag::TakayamaF12, KeyCode::X, ModifierFlag::SHIFT_L, ModifierFlag::OPTION_L, </autogen>
+            <!-- X = CMD+SHIFT+X -->
+            <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::TakayamaF12, KeyCode::X, ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L,</autogen>
+        </item>
+        <item>
+            <name>TakayamaF11</name>
+            <identifier>TakayamaF11</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F11, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF11, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F11, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F11, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF11, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF11, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF11, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF11, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF11, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>        
+        </item>
+        <item>
+            <name>TakayamaF10</name>
+            <identifier>TakayamaF10</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F10, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF10, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F10, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F10, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF10, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF10, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF10, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF10, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF10, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>        
+        </item>
+        <item>
+            <name>TakayamaF9</name>
+            <identifier>TakayamaF9</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F9, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF9, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F9, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F9, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF9, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF9, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF9, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF9, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF9, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>        
+        </item>
+        <item>
+            <name>TakayamaF8</name>
+            <identifier>TakayamaF8</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F8, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF8, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F8, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F8, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF8, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF8, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF8, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF8, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF8, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>        
+        </item>
+        <item>
+            <name>TakayamaF7</name>
+            <identifier>TakayamaF7</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F7, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF7, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F7, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F7, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF7, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF7, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF7, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF7, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF7, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>        
+        </item>
+        <item>
+            <name>TakayamaF6</name>
+            <identifier>TakayamaF6</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F6, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF6, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F6, ModifierFlag::COMMAND_L,  KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F6, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF6, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF6, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF6, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF6, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF6, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>        
+        </item>
+        <item>
+            <name>TakayamaF5</name>
+            <identifier>TakayamaF5</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F5, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF5, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F5, ModifierFlag::COMMAND_L,  KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F5, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF5, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF5, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF5, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF5, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF5, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__
+                KeyCode::I, ModifierFlag::TakayamaF5, ModifierFlag::PseudoCommand,
+
+                KeyCode::I, ModifierFlag::COMMAND_R,
+            </autogen>
+            <autogen>__ScrollWheelToKey__ ScrollWheel::UP, ModifierFlag::TakayamaF5, KeyCode::CURSOR_UP,</autogen>
+            <autogen>__ScrollWheelToKey__ ScrollWheel::DOWN, ModifierFlag::TakayamaF5, KeyCode::CURSOR_DOWN,</autogen>
+        </item>
+        <item>
+            <name>TakayamaF4</name>
+            <identifier>TakayamaF4</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F4, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF4, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F4, ModifierFlag::COMMAND_L,  KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F4, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF4, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF4, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF4, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF4, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF4, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+        </item>
+
+        <item>
+            <name>TakayamaF3</name>
+            <identifier>TakayamaF3</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F3, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF3, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F3, ModifierFlag::COMMAND_L,  KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F3, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F2, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF3, KeyCode::VK_NONE</autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_RIGHT, ModifierFlag::TakayamaF3, 
+
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_LEFT, ModifierFlag::TakayamaF3, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_LEFT, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_LEFT, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_UP, ModifierFlag::TakayamaF3, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_UP, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_UP, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>
+                __KeyToKey__ 
+                KeyCode::CURSOR_DOWN, ModifierFlag::TakayamaF3, 
+                
+                KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_DOWN, 
+                KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_DOWN, 
+                KeyRepeat::RawValue::50,
+            </autogen>
+            <autogen>  <!-- Track Manager -->
+                __HoldingKeyToKey__ KeyCode::T, ModifierFlag::TakayamaF3,
+                <!-- normal -->
+                @begin KeyCode::T, @end
+                <!-- holding -->
+                @begin KeyCode::T,
+                <!-- a hack to release second click -->
+                KeyCode::T, ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L, @end
+            </autogen>
+            <autogen>  <!-- Mixer -->
+                __HoldingKeyToKey__ KeyCode::M, ModifierFlag::TakayamaF3,
+                <!-- normal -->
+                @begin KeyCode::M, @end
+                <!-- holding -->
+                @begin KeyCode::M,
+                <!-- a hack to release second click -->
+                KeyCode::M, ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L, @end
+            </autogen>
+            <autogen>  <!-- Media Explorer -->
+                __HoldingKeyToKey__ KeyCode::X, ModifierFlag::TakayamaF3,
+                <!-- normal -->
+                @begin KeyCode::X, @end
+                <!-- holding -->
+                @begin KeyCode::X,
+                <!-- a hack to release second click -->
+                KeyCode::X, ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L, @end
+            </autogen>
+            <autogen> <!-- Marker List -->
+                __HoldingKeyToKey__ KeyCode::L, ModifierFlag::TakayamaF3,
+                <!-- normal -->
+                @begin KeyCode::L, @end
+                <!-- holding -->
+                @begin KeyCode::L,
+                <!-- a hack to release second click -->
+                KeyCode::L, ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L, @end
+            </autogen>
+        </item>
+        <item>
+            <name>TakayamaF2</name>
+            <identifier>TakayamaF2</identifier>
+            <only>REAPER</only>
+            <autogen>
+                __KeyToKey__ KeyCode::F2, MODIFIERFLAGS_ANY, KeyCode::VK_MODIFIER_TakayamaF2, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::F2, KeyCode::VK_CONFIG_FORCE_ON_fkey_gate, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F2, ModifierFlag::SHIFT_L, KeyCode::VK_CONFIG_FORCE_OFF_fkey_gate,
+            </autogen>
+
+            <!-- block input from all other F-keys -->
+            <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F11, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F10, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F9, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F8, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F7, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F6, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F5, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F4, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FN, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TakayamaF2, KeyCode::VK_NONE</autogen>
+        </item>
+    </item>
+    <item>
+        <name>sticky state</name>
+        <identifier>sticky.state</identifier>
+        <autogen>
+            __KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_STICKY_EXTRA1_FORCE_ON, KeyCode::SHIFT_R,
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            <!-- from -->
+            KeyCode::SPACE, ModifierFlag::SHIFT_R | ModifierFlag::EXTRA1,
+            <!-- to -->
+            KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE,
+        </autogen>
+    </item>
+    <item>
+        <name>samjob</name>
+        <identifier>samjob.gogogo</identifier>
+        <autogen>
+            __KeyOverlaidModifier__ KeyCode::F5, @begin KeyCode::VK_MODIFIER_EXTRA1, @end @begin KeyCode::F5, @end
+        </autogen>
+        <!-- <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::EXTRA1, KeyCode::F5, KeyCode::Z</autogen> -->
+        <autogen>__KeyToKey__ KeyCode::A, ModifierFlag::EXTRA1, KeyCode::B</autogen>
+    </item>
+    <item>
+        <name>Use the correct shift keys.</name>
+        <identifier vk_config="true">notsave.private_correct_shift_keys_indicator</identifier>
+        <autogen>--ShowStatusMessage-- Wrong shift key pressed</autogen>
+        <!-- KeyCode::VK_CONFIG_FORCE_ON_notsave_private_correct_shift_keys_indicator -->
+    </item>
+    <item>
+        <name>sam's stop key repeat: F4</name>
+        <identifier>stop.F4s.repeat</identifier>
+        <autogen>__KeyToKey__ KeyCode::F4, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_NEGATIVE_LOCK_CAPSLOCK,KeyCode::VK_NEGATIVE_LOCK_COMMAND_L,KeyCode::VK_NEGATIVE_LOCK_COMMAND_R,KeyCode::VK_NEGATIVE_LOCK_CONTROL_L,KeyCode::VK_NEGATIVE_LOCK_CONTROL_R,KeyCode::VK_NEGATIVE_LOCK_OPTION_L,KeyCode::VK_NEGATIVE_LOCK_OPTION_R,KeyCode::VK_NEGATIVE_LOCK_SHIFT_L,KeyCode::VK_NEGATIVE_LOCK_SHIFT_R,KeyCode::VK_NEGATIVE_LOCK_FN,KeyCode::F4, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F4, KeyCode::VK_NEGATIVE_LOCK_CAPSLOCK,KeyCode::VK_NEGATIVE_LOCK_COMMAND_L,KeyCode::VK_NEGATIVE_LOCK_COMMAND_R,KeyCode::VK_NEGATIVE_LOCK_CONTROL_L,KeyCode::VK_NEGATIVE_LOCK_CONTROL_R,KeyCode::VK_NEGATIVE_LOCK_OPTION_L,KeyCode::VK_NEGATIVE_LOCK_OPTION_R,KeyCode::VK_NEGATIVE_LOCK_SHIFT_L,KeyCode::VK_NEGATIVE_LOCK_SHIFT_R,KeyCode::VK_NEGATIVE_LOCK_FN
+        </autogen>
+    </item>
+    <item>
+        <name>sam's stop key repeat: F3</name>
+        <identifier>stop.F3s.repeat</identifier>
+        <autogen>__KeyToKey__ KeyCode::F3, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_NEGATIVE_LOCK_CAPSLOCK,KeyCode::VK_NEGATIVE_LOCK_COMMAND_L,KeyCode::VK_NEGATIVE_LOCK_COMMAND_R,KeyCode::VK_NEGATIVE_LOCK_CONTROL_L,KeyCode::VK_NEGATIVE_LOCK_CONTROL_R,KeyCode::VK_NEGATIVE_LOCK_OPTION_L,KeyCode::VK_NEGATIVE_LOCK_OPTION_R,KeyCode::VK_NEGATIVE_LOCK_SHIFT_L,KeyCode::VK_NEGATIVE_LOCK_SHIFT_R,KeyCode::VK_NEGATIVE_LOCK_FN,KeyCode::F3, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F3, KeyCode::VK_NEGATIVE_LOCK_CAPSLOCK,KeyCode::VK_NEGATIVE_LOCK_COMMAND_L,KeyCode::VK_NEGATIVE_LOCK_COMMAND_R,KeyCode::VK_NEGATIVE_LOCK_CONTROL_L,KeyCode::VK_NEGATIVE_LOCK_CONTROL_R,KeyCode::VK_NEGATIVE_LOCK_OPTION_L,KeyCode::VK_NEGATIVE_LOCK_OPTION_R,KeyCode::VK_NEGATIVE_LOCK_SHIFT_L,KeyCode::VK_NEGATIVE_LOCK_SHIFT_R,KeyCode::VK_NEGATIVE_LOCK_FN
+        </autogen>
+
+        <!--         <autogen>__KeyToKey__ KeyCode::CAPSLOCK, KeyCode::VK_NONE</autogen> 
+        <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::VK_NONE</autogen> 
+        <autogen>__KeyToKey__ KeyCode::COMMAND_R , KeyCode::VK_NONE</autogen> 
+        <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::VK_NONE</autogen> 
+        <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::VK_NONE</autogen> 
+        <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::VK_NONE</autogen>         
+        <autogen>__KeyToKey__ KeyCode::OPTION_R , KeyCode::VK_NONE</autogen> 
+        <autogen>__KeyToKey__ KeyCode::SHIFT_L , KeyCode::VK_NONE</autogen> 
+        <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_NONE</autogen> 
+        <autogen>__KeyToKey__ KeyCode::FN, KeyCode::VK_NONE</autogen>  -->
+        <!-- <autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_NONE</autogen> -->
+
+    </item>
+    <item>
+        <name>sam's stop key repeat: F2</name>
+        <identifier>stop.F2s.repeat</identifier>
+        <autogen>__KeyToKey__ KeyCode::F2, Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_NEGATIVE_LOCK_CAPSLOCK,KeyCode::VK_NEGATIVE_LOCK_COMMAND_L,KeyCode::VK_NEGATIVE_LOCK_COMMAND_R,KeyCode::VK_NEGATIVE_LOCK_CONTROL_L,KeyCode::VK_NEGATIVE_LOCK_CONTROL_R,KeyCode::VK_NEGATIVE_LOCK_OPTION_L,KeyCode::VK_NEGATIVE_LOCK_OPTION_R,KeyCode::VK_NEGATIVE_LOCK_SHIFT_L,KeyCode::VK_NEGATIVE_LOCK_SHIFT_R,KeyCode::VK_NEGATIVE_LOCK_FN,KeyCode::F2, Option::KEYTOKEY_AFTER_KEYUP, KeyCode::F2, KeyCode::VK_NEGATIVE_LOCK_CAPSLOCK,KeyCode::VK_NEGATIVE_LOCK_COMMAND_L,KeyCode::VK_NEGATIVE_LOCK_COMMAND_R,KeyCode::VK_NEGATIVE_LOCK_CONTROL_L,KeyCode::VK_NEGATIVE_LOCK_CONTROL_R,KeyCode::VK_NEGATIVE_LOCK_OPTION_L,KeyCode::VK_NEGATIVE_LOCK_OPTION_R,KeyCode::VK_NEGATIVE_LOCK_SHIFT_L,KeyCode::VK_NEGATIVE_LOCK_SHIFT_R,KeyCode::VK_NEGATIVE_LOCK_FN
+        </autogen>
+    </item>
+
+
+    <item>
+        <name>Uber Key Mappings</name>
+        <appendix>Must unmap all Mac OS X level F-key shortcuts (none are useful)</appendix>
+
+        <item>
+            <name>Uber+[1-90-=] mapped to Shift+F1-F12)</name>
+            <identifier>uber_key.uber_row1_to_shift_fn</identifier>
+            <autogen>--KeyToKey-- KeyCode::KEY_1, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F1, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_2, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F2, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_3, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F3, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_4, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F4, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_5, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F5, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_6, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F6, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_7, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F7, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F8, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_9, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F9, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::KEY_0, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F10, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::MINUS, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F11, ModifierFlag::SHIFT_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::EQUAL, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F12, ModifierFlag::SHIFT_L</autogen>
+        </item>
+
+
+        <item>
+            <name>Uber+[qwertyuiop\[\]] mapped to Ctrl+F1-F12)</name>
+            <identifier>uber_key.uber_row2_to_ctrl_fn</identifier>
+            <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F1, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F2, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F3, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F4, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::T, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F5, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::Y, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F6, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F7, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F8, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F9, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F10, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F11, ModifierFlag::CONTROL_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F12, ModifierFlag::CONTROL_L</autogen>
+        </item>
+
+        <item>
+            <name>Uber+[asdfghjkl\;\'] mapped to Opt+F1-F12)</name>
+            <identifier>uber_key.uber_row3_to_opt_fn</identifier>
+            <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F1, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::S, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F2, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F3, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F4, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F5, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F6, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F7, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F8, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F9, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F10, ModifierFlag::OPTION_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F11, ModifierFlag::OPTION_L</autogen>
+            <!-- OPT+F12 unassigned - tilda? -->
+        </item>
+
+
+        <item>
+            <name>Uber+[zxcvbnm\,\.\/] mapped to Cmd+F1-F12)</name>
+            <identifier>uber_key.uber_row4_to_cmd_fn</identifier>
+            <autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F1, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::X, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F2, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::C, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F3, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::V, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F4, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F5, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F6, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F7, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F8, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F9, ModifierFlag::COMMAND_L</autogen>
+            <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::EXTRA1 | ModifierFlag::NONE, KeyCode::F10, ModifierFlag::COMMAND_L</autogen>
+            <!-- CMD+F11 unassigned - delete? -->
+            <!-- CMD+F12 unassigned - backslash? -->
+        </item>
+    </item>
+
+    <replacementdef>
+        <replacementname>KEY1</replacementname>
+        <replacementvalue>KeyCode::SPACE</replacementvalue>
+    </replacementdef>
+    <replacementdef>
+        <replacementname>KEY2</replacementname>
+        <replacementvalue>KeyCode::ESCAPE</replacementvalue>
+    </replacementdef>
+
+    <item>
+        <name>Swap {{ KEY1 }} and {{ KEY2 }}</name>
+        <identifier>private.swap_{{ KEY1 }}_{{ KEY2 }}</identifier>
+        <autogen>__KeyToKey__ {{ KEY1 }}, {{ KEY2 }}</autogen>
+        <autogen>__KeyToKey__ {{ KEY2 }}, {{ KEY1 }}</autogen>
+    </item>
+  	
+    <!-- ============================================================ -->
+</root>
+    
