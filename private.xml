@@ -33,7 +33,14 @@
 </replacementdef>
 
 
-
+<appdef>
+    <appname>ALFRED</appname>
+    <equal>com.runningwithcrayons.Alfred-2</equal>
+</appdef>
+<appdef>
+    <appname>REAPER</appname>
+    <equal>com.cockos.reaper</equal>
+</appdef>
 <appdef>
     <appname>REAPER</appname>
     <equal>com.cockos.reaper</equal>
@@ -47,9 +54,62 @@
     <equal>com.google.Chrome</equal>
 </appdef>
 <appdef>
-    <appname>UNREAL</appname>
-    <equal>com.epicgames.UE4Editor</equal>
+    <appname>FINDER</appname>
+    <equal>com.apple.finder</equal>
 </appdef>
+<appdef>
+    <appname>ZEROBRANE</appname>
+    <equal>com.ZeroBrane.ZeroBraneStudio</equal>
+</appdef>
+<appdef>
+    <appname>MINECRAFT</appname>
+    <equal>net.java.openjdk.cmd</equal>
+</appdef>
+<appdef>
+    <appname>SUBSTANCEPAINTER</appname>
+    <equal>com.allegorithmic.substance-painter</equal>
+</appdef>
+
+<windownamedef>
+    <name>Quick Look</name>
+    <regex>^Quick Look$</regex>
+</windownamedef>
+
+<devicevendordef>
+    <vendorname>ANKER</vendorname>
+    <vendorid>0x062a</vendorid>
+</devicevendordef>
+<deviceproductdef>
+    <productname>VERTICALMOUSE</productname>
+    <productid>0x4102</productid>
+</deviceproductdef>  
+
+<item>
+    <name>nofn apps</name>
+    <identifier>private.nofn_apps</identifier>
+    <not>CHROME, FINDER</not>
+    <autogen>__KeyToKey__ ConsumerKeyCode::BRIGHTNESS_DOWN, KeyCode::F1</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::BRIGHTNESS_UP, KeyCode::F2</autogen>
+    <autogen>__KeyToKey__ KeyCode::EXPOSE_ALL, KeyCode::F3</autogen>
+    <autogen>__KeyToKey__ KeyCode::LAUNCHPAD, KeyCode::F4</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::KEYBOARDLIGHT_LOW, KeyCode::F5</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::KEYBOARDLIGHT_HIGH, KeyCode::F6</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PREV, KeyCode::F7</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::F8</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_NEXT, KeyCode::F9</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_MUTE, KeyCode::F10</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_DOWN, KeyCode::F11</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_UP, KeyCode::F12</autogen>   
+</item>
+<item>
+    <name>Alfred: ~/Users/samenglander/</name>
+    <identifier>private.alfred_homedir</identifier>
+    <autogen> 
+        __HoldingKeyToKey__ KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        @begin KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND @end
+        @begin KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L, @end
+    </autogen> 
+</item>
 <item>
     <name>Tabs</name>
     <identifier>private.tabs</identifier>    
@@ -67,36 +127,6 @@
         __PointingButtonToKey__
         PointingButton::BUTTON5, 
         KeyCode::CONTROL_L,
-    </autogen> 
-</item>
-<item>
-    <name>Alfred: Spacebar Holding</name>
-    <identifier>private.alfred_spacebar_holding</identifier>
-    <autogen> 
-        __HoldingKeyToKey__ KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
-
-            @begin KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND @end
-            @begin KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L, @end
-    </autogen> 
-</item>
-
-<item>
-    <name>mod fn</name>
-    <identifier>private.mod_fn</identifier>
-    <autogen> 
-       __KeyToKey__ 
-       KeyCode::DELETE, ModifierFlag::EXTRA1 | ModifierFlag::NONE, 
-       KeyCode::FORWARD_DELETE 
-     </autogen> 
-    <autogen> 
-        __KeyToKey__ 
-        KeyCode::FN, KeyCode::UK_SECTION, 
-
-        Option::KEYTOKEY_BEFORE_KEYDOWN, 
-        KeyCode::VK_LOCK_EXTRA1_FORCE_ON, 
-
-        Option::KEYTOKEY_AFTER_KEYUP, 
-        KeyCode::VK_LOCK_EXTRA1_FORCE_OFF, 
     </autogen> 
 </item>
 
@@ -301,130 +331,6 @@
         </autogen> -->
 
 </item>
-<item hidden="true">
-    <identifier vk_config="true">notsave.private_alfred_mode1</identifier>
-    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
-    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
-    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
-    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
-</item>
-<item hidden="true">
-    <identifier vk_config="true">notsave.private_alfred_mode2</identifier>
-    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT, KeyCode::H</autogen>
-    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN, KeyCode::J</autogen>
-    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP, KeyCode::K</autogen>
-    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT, KeyCode::L</autogen>
-</item>
- <appdef>
-    <appname>ALFRED</appname>
-    <equal>com.runningwithcrayons.Alfred-2</equal>
-  </appdef>
-  <windownamedef>
-    <name>Quick Look</name>
-    <regex>^Quick Look$</regex>
-  </windownamedef>
-<!--   <item>
-    <name>alfred 2</name>
-    <identifier>private.alfred_2</identifier>
-    <only>ALFRED</only>
-   
-    <autogen>
-    	__KeyToKey__
-    	KeyCode::CURSOR_UP,
-    	KeyCode::CURSOR_UP,
-    </autogen>
-	<autogen>
-    	__KeyToKey__
-    	KeyCode::CURSOR_DOWN,
-    	KeyCode::CURSOR_DOWN,
-    </autogen>    
-  </item> -->
-  <item>
-    <name>alfred 2 w/ quick look</name>    
-    <identifier>private.alfred_2_w/_quick_look</identifier>
-	<only>ALFRED</only>
-    <block>
-    	<windowname_only>Quick Look</windowname_only>
-	    <autogen>
-	    	__KeyToKey__
-	        KeyCode::CURSOR_UP, ModifierFlag::NONE,
-
-	        Option::KEYTOKEY_BEFORE_KEYDOWN,
-	       	KeyCode::ESCAPE,
-	    </autogen>    	
-	    <autogen>
-	    	__KeyToKey__
-	        KeyCode::CURSOR_DOWN, ModifierFlag::NONE,
-
-	        Option::KEYTOKEY_BEFORE_KEYDOWN,
-	       	KeyCode::ESCAPE,
-	    </autogen>
-	</block>
-	<autogen>
-    	__KeyToKey__
-    	KeyCode::CURSOR_UP, ModifierFlag::NONE,
-    	KeyCode::CURSOR_UP,
-    </autogen>  		
-	<autogen>
-    	__KeyToKey__
-    	KeyCode::CURSOR_DOWN, ModifierFlag::NONE,
-    	KeyCode::CURSOR_DOWN,
-    </autogen>    
-</item>  
-<item> 
-    <name>M (bépo) to Shift_R</name> 
-    <appendix>(+ When you type M only, send M) + [KeyRepeat]</appendix> 
-    <identifier>net.petitepomme.alan.space_m_shift</identifier> 
-    <autogen> 
-    	__KeyOverlaidModifierWithRepeat__ 
-    	KeyCode::QUOTE, 
-    	KeyCode::SHIFT_R, ModifierFlag::M, 
-    	KeyCode::QUOTE 
-	</autogen> 
-  	<block> 
-    	<!-- <modifier_only>ModifierFlag::M</modifier_only>  -->
-    	<windowname_only>Quick Look</windowname_only>
-	    <autogen>__KeyToKey__ KeyCode::SHIFT_L</autogen> 
-    </block> 
-</item> 
-  <item>
-    <name>Return to Control_L</name>
-    <appendix>(+ When you type Return only, send Return)</appendix>
-    <identifier>private.return2controlL_return</identifier>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::RETURN,
-      KeyCode::VK_LAZY_CONTROL_L,
-      KeyCode::RETURN,
-    </autogen>
-  </item>
-
-  <item>
-    <name>Control_L to Control_L</name>
-    <appendix>(+ When you type Control_L only, send Escape)</appendix>
-    <identifier>private.controlL2controlL_escape</identifier>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::CONTROL_L,
-      KeyCode::VK_LAZY_CONTROL_L,
-      KeyCode::ESCAPE
-    </autogen>
-  </item>
-
-<!-- Definitions for devices and applications -->
-    <appdef>
-        <appname>REAPER</appname>
-        <equal>com.cockos.reaper</equal>
-    </appdef>
-    <devicevendordef>
-        <vendorname>ANKER</vendorname>
-        <vendorid>0x062a</vendorid>
-    </devicevendordef>
-    <deviceproductdef>
-        <productname>VERTICALMOUSE</productname>
-        <productid>0x4102</productid>
-    </deviceproductdef>  
-<!-- end -->
 
 <item>
     <name>Reaper Scroll Util</name>
