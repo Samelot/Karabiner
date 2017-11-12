@@ -1,1 +1,1 @@
-#karabiner autogens
+# Karabiner autogens
